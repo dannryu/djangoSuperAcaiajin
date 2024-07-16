@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Formulario</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link rel='stylesheet' type='text/css' href="{% static 'css/principal.css' %}">
+</head>
+<body>
+    <h1>FORMULARIO SUPER<strong>AÇAI</strong>AJIN</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <fieldset>
+            <legend>Dados pessoais:</legend>
+            <label><span>Nome:</span> {{ form.nome }}</label>
+            <label><span>Idade:</span> {{ form.idade }}</label>
+            <label><span>Telefone:</span> {{ form.telefone }}</label>
+            <label><span>Endereço:</span> {{ form.endereco }}</label>
+            <label><span>Planeta de Origem:</span> {{ form.planeta_origem }}</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados extras:</legend>
+            <label><span>Raça do Universo 7 preferida:</span> {{ form.raca_preferida }}</label>
+            <br><br>
+            <label><span>Trabalho:</span> {{ form.trabalho }}</label>
+            <br><br>
+            <label><span>Açai é perfeito de que jeito?</span></label>
+            <label>{{ form.acai_preferido }}</label>
+            <br><br>
+            <label><span>Tamanho preferido:</span> {{ form.tamanho_preferido }}</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Observações:</legend>
+            <label><span>Observações:</span> {{ form.observacoes }}</label>
+        </fieldset>
+
+        <div>
+            <input type="submit" value="ENVIAR">
+            <input type="reset" value="LIMPAR">
+        </div>
+    </form>
+</body>
+</html>
