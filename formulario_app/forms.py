@@ -2,6 +2,9 @@
 
 from django import forms
 from .models import Formulario
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import AuthenticationForm
 
 class FormularioForm(forms.ModelForm):
     class Meta:
@@ -22,3 +25,41 @@ class FormularioForm(forms.ModelForm):
             'tamanho_preferido': forms.RadioSelect(choices=Formulario.TAMANHO_CHOICES, attrs={'class': 'form-radio'}),
             'observacoes': forms.Textarea(attrs={'class': 'form-control'}),
         }
+
+class CustomUserCreationForm(UserCreationForm):
+    username = forms.CharField (
+        label='Nome de Usuário',
+        help_text=None  # Removendo o help_text
+    )
+
+    password1 = forms.CharField(
+        label='Senha:',
+        help_text=None
+    )
+
+    password2 = forms.CharField(
+        label='Repita a senha:',
+        help_text=None
+    )
+    class Meta(UserCreationForm.Meta):
+        model = User
+        fields = ('email', 'username', 'first_name', 'last_name')
+        labels = {
+            'email': 'Endereço de Email',
+            'username': 'Nome de Usuário',
+            'first_name': 'Primeiro Nome',
+            'last_name': 'Sobrenome',
+        }
+
+class CustomAuthenticationForm(AuthenticationForm):
+    username = forms.CharField(
+        label='Nome de Usuário',
+        #widget=forms.TextInput(attrs={'class': 'form-control'}),
+        help_text=None  # Remove o help_text do campo username
+    )
+    password = forms.CharField(
+        label='Senha',
+        strip=False,
+        #widget=forms.PasswordInput(attrs={'class': 'form-control'}),
+        help_text=None  # Remove o help_text do campo password
+    )

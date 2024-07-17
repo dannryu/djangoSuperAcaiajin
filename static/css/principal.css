@@ -1,13 +1,64 @@
 /* principal.css */
-
 body {
-    background-image: url('../images/goku.png');
+    background-image: url('../images/goku.png'); /* certifique-se do nome arquivo */
     background-color: indigo;
     background-position: right top;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 30%;
 }
+
+.container {
+    width: 500px; /* Defina a largura do contêiner */
+    background-color: #d8c7a3; /* Cor de fundo branca */
+    padding: 30px; /* Espaçamento interno */
+    border-radius: 5px; /* Borda arredondada */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    align-items: center;
+    text-align: center;
+}
+
+.container form label{
+    font-size: 20px;
+    text-shadow: black 1px 1px 1px;
+}
+
+.container form input[type="text"],
+form input[type="password"]{
+    background-color: darkorchid;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.register{
+    text-align: center;
+}
+
+.register label{
+    font-size: 20px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.register form input[type="text"],
+form input[type="password"], form input[type="email"]{
+    border: none;
+    padding: 10px 16px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 18px;
+    width: 30%;
+}
+
 
 h1 {
     font-family: cursive;
@@ -56,7 +107,8 @@ select.form-control {
     font-size: 16px;
 }
 
-input[type=submit], input[type=reset] {
+input[type=submit], input[type=reset], button
+ {
     background-color: darkorchid;
     border: none;
     color: white;
@@ -91,4 +143,34 @@ label {
 
 label span {
     font-weight: bold;
+}
+
+/* Estilos para a tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+    background-color: darkmagenta;
+    color: goldenrod;
+    font-family: 'Roboto', sans-serif; /* Aplicando Roboto na tabela */
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid goldenrod;
+}
+
+table th {
+    background-color: goldenrod;
+    color: darkmagenta;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tbody tr:hover {
+    background-color: lightpink;
 }

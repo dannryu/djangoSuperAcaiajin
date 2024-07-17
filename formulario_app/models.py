@@ -51,3 +51,5 @@ class Formulario(models.Model):
     acai_preferido = models.CharField(max_length=20, choices=ACAI_CHOICES)
     tamanho_preferido = models.CharField(max_length=100, choices=TAMANHO_CHOICES)
     observacoes = models.TextField()
+
+

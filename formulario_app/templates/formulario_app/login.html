@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link rel='stylesheet' type='text/css' href="{% static 'css/principal.css' %}">
+</head>
+<body>
+<center>
+    <div class="container">  <!-- Adicionando o div container -->
+        <h1>Login - SuperAçaiajin</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Entrar</button>
+        </form>
+        <a href="{% url 'register' %}">
+            <button type="button">Registrar-se</button>
+        </a>
+    </div>
+</center>
+</body>
+</html>

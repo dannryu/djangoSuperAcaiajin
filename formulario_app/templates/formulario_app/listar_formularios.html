@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Lista de Formularios</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link rel='stylesheet' type='text/css' href="{% static 'css/principal.css' %}">
+</head>
+<body>
+    <h1>Formulários Submetidos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Telefone</th>
+                <th>Endereço</th>
+                <th>Planeta de Origem</th>
+                <th>Raça Preferida</th>
+                <th>Trabalho</th>
+                <th>Açai Preferido</th>
+                <th>Tamanho Preferido</th>
+                <th>Observações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for formulario in formularios %}
+            <tr>
+                <td>{{ formulario.nome }}</td>
+                <td>{{ formulario.idade }}</td>
+                <td>{{ formulario.telefone }}</td>
+                <td>{{ formulario.endereco }}</td>
+                <td>{{ formulario.planeta_origem }}</td>
+                <td>{{ formulario.raca_preferida }}</td>
+                <td>{{ formulario.trabalho }}</td>
+                <td>{{ formulario.acai_preferido }}</td>
+                <td>{{ formulario.tamanho_preferido }}</td>
+                <td>{{ formulario.observacoes }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
